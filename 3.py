@@ -64,5 +64,20 @@ def st():
         #if(values > 0 and values < 1000):
         #    print(keys,":",values)
     #print(numdict)
-st()
+#st()
+
+def linefinder(line):
+    for chactr in line:
+        assi = ord(chactr)
+        if assi not in range(0,65) and assi not in range(91,97) and assi not in range(123,128):
+            print(chr(assi))                  
+
+def beginhere():
+    f = open('3text.txt', 'r')
+    #num = {}
+    for line in f:
+        linefinder(line)
+        
+beginhere()
+    
 #files()
