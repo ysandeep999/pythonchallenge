@@ -1,28 +1,21 @@
 __author__ = 'yalamanchili'
+__author__ = 'prasanth'
 
-import nltk
-from nltk.corpus import words
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Oct  2 19:14:53 2015
 
-word_list = words.words()
+@author: Sam
+"""
+#import string
+import re
 
-#print(type(word_list))
-print(len(word_list))
-def big(word):
-    if( word[0].isupper() and word[1].isupper() and word[2].isupper()and  word[4].isupper() and word[5].isupper() and word[6].isupper()):
-        return 1
-    else :
-        return 0
+patterns = re.compile('[A-Z][A-Z][A-Z][a-z][A-Z][A-Z][A-Z]')
 
+#text = "AAAaAAA"
 
+with open("test.txt") as text:
+    m = patterns.finditer(text.read())
 
-start = 0
-for word in word_list:
-    if len(word) == 7 :
-        if(word[0].isupper()):
-            print("--",word)
-        #if (word[0] == word[4] and word[1] == word[5] ):
-        ##start += 1
-        ##if ( big(word)) == 1 :
-         ##   print(word)
-
-       ## print(start)
+for i in m:
+    print(i.group())
