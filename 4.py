@@ -22,13 +22,13 @@ bsb =[]
 for i in m:
     bsb.append(i.group())
     #print(i.group())
-print(bsb)
-print(len(bsb))
+###print(bsb)
+###print(len(bsb))
 
 
-for word in bsb:
-    if(word[0] == word[6] and word[1] == word[5]): # and word[2] == word[6]):
-        print(word)
+###for word in bsb:
+    ###if(word[0] == word[6] and word[1] == word[5]): # and word[2] == word[6]):
+       ### print(word)
 
 patlist = []
 
@@ -71,4 +71,9 @@ def beginhere():
     print(len(emptlst))
     pal(emptlst)
 
-beginhere()
+###beginhere()
+
+import re
+
+with open("4test.txt") as text: 
+    print(''.join(re.findall('[^A-Z][A-Z]{3}([a-z])[A-Z]{3}[^A-Z]', text.read())))
