@@ -2,7 +2,7 @@ import string
 
 
 start = 0
-numdict ={}
+numdict = []
 
 def pychal(num, line):
         
@@ -45,7 +45,8 @@ def files(nnn):
         start = 0
         for line in f:
             pychal(number, line)
-        numdict[chr(number)] = start
+        numdict.append([chr(number),start])
+        #numdict[chr(number)] = start
         #start = 0
     #print("end")
     #print(type(num))
@@ -55,9 +56,28 @@ def st():
     for nn in range(0,127):
         files(nn)
 
-    for keys,values in numdict.items():
-        if(values > 0 and values < 1000):
-            print(keys,":",values)
+    for item in numdict:
+        if item[1] != 0:
+            print(item)
     #print(numdict)
-st()
+    #for keys,values in numdict.items():
+        #if(values > 0 and values < 1000):
+        #    print(keys,":",values)
+    #print(numdict)
+#st()
+
+def linefinder(line):
+    for chactr in line:
+        assi = ord(chactr)
+        if assi not in range(0,65) and assi not in range(91,97) and assi not in range(123,128):
+            print(chr(assi))                  
+
+def beginhere():
+    f = open('3text.txt', 'r')
+    #num = {}
+    for line in f:
+        linefinder(line)
+        
+beginhere()
+    
 #files()
