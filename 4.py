@@ -32,7 +32,7 @@ for i in m:
 
 patlist = []
 
-def patlinefinder(line):        # 
+def patlinefinder(line):        #
     patt = re.compile('[A-Z][A-Z][A-Z][a-z][A-Z][A-Z][A-Z]')
     res = re.search(patt, line)
     res.groups()
